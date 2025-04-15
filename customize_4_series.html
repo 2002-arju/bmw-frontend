@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BMW 1 Series – Details</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+      max-width: 1300px;
+      margin: auto;
+      gap: 40px;
+    }
+
+    .carousel {
+      flex: 1;
+      position: relative;
+      max-width: 600px;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(255, 204, 0, 0.1);
+      transition: opacity 0.6s ease, transform 0.5s ease;
+    }
+
+    .carousel img.animate {
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 40px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #ffcc00;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 10;
+      border-radius: 50%;
+    }
+
+    .arrow:hover {
+      background-color: rgba(255, 204, 0, 0.8);
+      color: #000;
+    }
+
+    .arrow.left { left: 10px; }
+    .arrow.right { right: 10px; }
+
+    .details {
+      flex: 1;
+      min-width: 320px;
+    }
+
+    .details h1 {
+      font-size: 36px;
+      color: #ffcc00;
+    }
+
+    .price {
+      font-size: 28px;
+      color: #00ffb3;
+      margin: 10px 0;
+      text-shadow: 0 0 10px #00ffb3;
+    }
+
+    .stars {
+      font-size: 22px;
+      color: gold;
+      margin: 10px 0;
+      text-shadow: 0 0 8px gold;
+    }
+
+    .features {
+      margin-top: 30px;
+      background-color: #111;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 204, 0, 0.1);
+    }
+
+    .features h3 {
+      margin-bottom: 20px;
+      color: #ffcc00;
+      font-size: 24px;
+      border-bottom: 2px solid #ffcc00;
+      padding-bottom: 10px;
+    }
+
+    .features ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .features li {
+      margin-bottom: 12px;
+      font-size: 17px;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .features li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #00ffb3;
+      font-size: 18px;
+    }
+
+    .book-btn {
+      display: inline-block;
+      background-color: #ffcc00;
+      color: #000;
+      padding: 15px 30px;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 30px;
+      margin-top: 30px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .book-btn:hover {
+      background-color: #e6b800;
+      cursor: pointer;
+    }
+
+    .reviews {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: 60px auto 40px auto;
+      background-color: #111;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 204, 0, 0.05);
+    }
+
+    .reviews h2 {
+      color: #ffcc00;
+      margin-bottom: 30px;
+      font-size: 28px;
+      text-align: center;
+      border-bottom: 2px solid #ffcc00;
+      padding-bottom: 10px;
+    }
+
+    .review {
+      display: flex;
+      align-items: flex-start;
+      background-color: #1a1a1a;
+      padding: 20px 25px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 8px rgba(255, 204, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .review:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(255, 204, 0, 0.15);
+    }
+
+    .review img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .review-content p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #eee;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background-color: #000;
+      color: #fff;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="models.html">Models</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Car Feature Section -->
+  <section class="container">
+    <!-- Carousel Section -->
+    <div class="carousel">
+      <button class="arrow left" onclick="changeSlide(-1)">&#8592;</button>
+      <img id="carousel-image" src="images/silver.jpg" alt="BMW 1 Series Image" />
+      <button class="arrow right" onclick="changeSlide(1)">&#8594;</button>
+    </div>
+
+    <!-- Car Details -->
+    <div class="details">
+      <h1>BMW 1 Series</h1>
+      <div class="price">Starting at $35,000</div>
+      <div class="stars">★★★★★ (4.8/5)</div>
+
+      <div class="features">
+        <h3>Key Features</h3>
+        <ul>
+          <li>1.5L TwinPower Turbo engine</li>
+          <li>Front-wheel drive with agile handling</li>
+          <li>Sporty and bold exterior styling</li>
+          <li>iDrive infotainment system with voice control</li>
+          <li>LED headlights & wireless Apple CarPlay</li>
+        </ul>
+      </div>
+
+      <a href="booking4.html" class="book-btn">Book Now</a>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="reviews">
+    <h2>Customer Reviews</h2>
+
+    <div class="review">
+      <img src="images/custmor.jpg" alt="Alex">
+      <div class="review-content">
+        <p><strong>Alex T.:</strong> "Perfect mix of sporty feel and luxury. Love the tech and smooth ride!"</p>
+      </div>
+    </div>
+
+    <div class="review">
+      <img src="images/custmor1.jpg" alt="Maya">
+      <div class="review-content">
+        <p><strong>Maya R.:</strong> "BMW nailed it with this model. Compact yet powerful. Highly recommend it!"</p>
+      </div>
+    </div>
+
+    <div class="review">
+      <img src="images/custmor2.jpg" alt="Dev">
+      <div class="review-content">
+        <p><strong>Dev P.:</strong> "I've had it for 6 months now. Excellent for city driving, super efficient."</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 BMW. All rights reserved.
+  </footer>
+
+  <!-- Image Carousel Script -->
+  <script>
+    const images = [
+      'images/blck front.jpg',
+      'images/cement back.jpg',
+      'images/cement.jpg',
+      'images/black light.jpg',
+      'images/3.jpg'
+    ];
+    let currentImageIndex = 0;
+    const imageElement = document.getElementById('carousel-image');
+
+    function changeSlide(direction) {
+      currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+      imageElement.classList.remove('animate');
+      void imageElement.offsetWidth; // trigger reflow for animation restart
+      imageElement.src = images[currentImageIndex];
+      imageElement.classList.add('animate');
+    }
+  </script>
+
+</body>
+</html>

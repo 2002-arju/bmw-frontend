@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMW Events – Details</title>
+  <style>
+    /* General Reset */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      padding-top: 0;
+    }
+
+    /* Header Styles */
+    .header {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px 0;
+      position: relative;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+    }
+
+    .header .logo img {
+      max-width: 150px;
+      margin-left: 20px;
+    }
+
+    .navigation ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 10px 0;
+    }
+
+    .navigation a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    .navigation a:hover {
+      color: #ffcc00;
+      transition: all 0.3s ease;
+    }
+
+    /* Countdown Timer Styles */
+    .countdown-banner {
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      text-align: center;
+      padding: 10px 20px;
+      position: fixed;
+      top: 80px;  /* Adjust this to place below the nav bar */
+      right: 20px;
+      font-size: 18px;
+      opacity: 0.8;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      z-index: 1001;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .countdown-banner:hover {
+      opacity: 1;
+      transform: translateY(-5px);
+    }
+
+    #countdown {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    #countdown span {
+      margin: 0 10px;
+    }
+
+    /* Hero Section Styles */
+    .hero {
+      height: 100vh;
+      background-image: url('images/rain logo.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 65px;
+      color: #fff;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      margin-bottom: 450px;
+    }
+
+    .hero p {
+      font-size: 24px;
+      margin-bottom: 30px;
+      line-height: 1;
+      color: #fff;
+      font-weight: 300;
+    }
+
+    .cta-btn {
+      background-color: #ffcc00;
+      color: #000;
+      text-decoration: none;
+      padding: 20px 40px;
+      font-size: 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #e6b800;
+    }
+
+    /* Event Section Styles */
+    .event-header {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .event-header h1 {
+      font-size: 48px;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .event-section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      justify-items: center;
+      padding: 60px 20px;
+      background-color: #111;
+    }
+
+    .event-card {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 300px;
+      box-shadow: 0 10px 20px rgba(255, 204, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .event-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(255, 204, 0, 0.2);
+    }
+
+    .event-card h3 {
+      color: #ffcc00;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .event-card p {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .event-card .date {
+      font-size: 20px;
+      color: #00ffb3;
+      font-weight: bold;
+    }
+
+    .event-card .book-btn {
+      display: inline-block;
+      background-color: #ffcc00;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 18px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .event-card .book-btn:hover {
+      background-color: #e6b800;
+    }
+
+    /* Media Query for Mobile Devices */
+    @media (max-width: 768px) {
+      .event-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .event-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Countdown Section -->
+  <section class="countdown-banner">
+    <h2>⏳ Countdown to BMW X7 Launch Event</h2>
+    <div id="countdown">
+      <span id="days">--</span> Days 
+      <span id="hours">--</span> Hours 
+      <span id="minutes">--</span> Mins 
+      <span id="seconds">--</span> Secs
+    </div>
+  </section>
+
+  <!-- Header Section -->
+  <header class="header">
+    <nav class="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="models.html">Models</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section with Image and Text -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>BMW Events</h1>
+      <p>Join us for exclusive events and launches to experience the BMW difference.</p>
+      <a href="#events" class="cta-btn">Explore Upcoming Events</a>
+    </div>
+  </section>
+
+  <!-- Event Header Section -->
+  <section class="event-header">
+    <h1>Upcoming BMW Events</h1>
+  </section>
+
+  <!-- Event Section -->
+  <section id="events" class="event-section">
+    <!-- Event Card 1 -->
+    <div class="event-card">
+      <h3>BMW X7 Launch Event</h3>
+      <p><strong>Date:</strong> April 30, 2025</p>
+      <p><strong>Time:</strong> 6:00 PM</p>
+      <p><strong>Location:</strong> BMW City Showroom</p>
+      <div class="date">Book Your Slot</div>
+      <a href="#" class="book-btn">Register Now</a>
+    </div>
+
+    <!-- Event Card 2 -->
+    <div class="event-card">
+      <h3>Test Drive Weekend</h3>
+      <p><strong>Date:</strong> May 10-11, 2025</p>
+      <p>Experience the new BMW M series with our exclusive test drive event.</p>
+      <div class="date">Book Your Slot</div>
+      <a href="#" class="book-btn">Book Now</a>
+    </div>
+
+    <!-- Event Card 3 -->
+    <div class="event-card">
+      <h3>BMW M Series Showroom Tour</h3>
+      <p><strong>Date:</strong> June 15, 2025</p>
+      <p>Get an inside look at the future of BMW’s M series lineup.</p>
+      <div class="date">Limited Slots</div>
+      <a href="#" class="book-btn">Register Today</a>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <center><p>&copy; 2025 BMW. All rights reserved.</p></center>
+  </footer>
+
+  <script>
+    // Set the date of the event (Y-M-D T H:M:S)
+    const launchDate = new Date("2025-04-30T18:00:00").getTime();
+
+    const countdownFunc = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance < 0) {
+        clearInterval(countdownFunc);
+        document.getElementById("countdown").innerHTML = "🎉 Event Started!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+    }, 1000);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMW Exclusive Showroom</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="home.css"> 
+  <!-- Separate home page CSS -->
+</head>
+<body>
+
+  <!-- Header Section -->
+
+    <nav class="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="models.html">Models</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section with Image and Text -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to the Exclusive BMW Showroom</h1>
+      <p>Experience the future of driving with our luxury vehicles. Explore BMW's innovation and performance.</p>
+      <a href="models.html" class="cta-btn">Explore BMW Models</a>
+    </div>
+    <script>
+      // Intersection Observer to animate hero content on scroll
+      const heroContent = document.querySelector('.hero-content');
+    
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            heroContent.style.transform = 'translateY(0)';
+          } else {
+            heroContent.style.transform = 'translateY(50px)';
+          }
+        });
+      }, { threshold: 0.5 });
+    
+      observer.observe(heroContent);
+    </script>
+    
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <center><p>&copy; 2025 BMW. All rights reserved.</p></center>
+  </footer>
+
+</body>
+</html>

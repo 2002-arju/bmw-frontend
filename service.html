@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMW Service – Details</title>
+  <style>
+    /* General Reset */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      padding-top: 0;
+    }
+
+    /* Header Styles */
+    .header {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px 0;
+      position: relative;
+      z-index: 1000;
+    }
+
+    
+    .navigation ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 10px 0;
+    }
+
+    .navigation a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .navigation a:hover {
+      color: #ffcc00;
+      transition: all 0.3s ease;
+    }
+
+    /* Hero Section Styles */
+    .hero {
+      height: 100vh;
+      background-image: url('images/service.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    
+
+    .hero h1 {
+      font-size: 65px;
+      color: #ffcc00;
+      margin-bottom: 450px;
+    }
+
+    .hero p {
+      font-size: 24px;
+      margin-bottom: 30px;
+      line-height: 1;
+    }
+
+    .cta-btn {
+      background-color: #ffcc00;
+      color: #000;
+      text-decoration: none;
+      padding: 20px 40px;
+      font-size: 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    
+    }
+
+    .cta-btn:hover {
+      background-color: #e6b800;
+    }
+
+    /* Service Section Styles (only for header part) */
+    .service-header {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .service-header h1 {
+      font-size: 48px;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    /* Service Section Layout */
+    .service-section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      justify-items: center;
+      padding: 60px 20px;
+      background-color: #111;
+    }
+
+    .service-card {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 300px;
+      box-shadow: 0 10px 20px rgba(255, 204, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(255, 204, 0, 0.2);
+    }
+
+    .service-card h3 {
+      color: #ffcc00;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .service-card p {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .service-card .price {
+      font-size: 20px;
+      color: #00ffb3;
+      font-weight: bold;
+    }
+
+    .service-card .book-btn {
+      display: inline-block;
+      background-color: #ffcc00;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 18px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .service-card .book-btn:hover {
+      background-color: #e6b800;
+    }
+
+    /* Contact Form Section */
+    .contact-section {
+      background-color: #222;
+      padding: 40px;
+      margin-top: 40px;
+      border-radius: 12px;
+    }
+
+    .contact-section h2 {
+      color: #ffcc00;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid #444;
+      background-color: #222;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .contact-form button {
+      background-color: #ffcc00;
+      color: #000;
+      padding: 15px;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #e6b800;
+    }
+
+    /* Media Query for Mobile Devices */
+    @media (max-width: 768px) {
+      .service-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .service-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  
+    <nav class="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="models.html">Models</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section with Image and Text -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to BMW Premium Service</h1>
+      <p>Providing top-tier service to keep your BMW in prime condition.</p>
+      <a href="#services" class="cta-btn">Explore Our Services</a>
+    </div>
+  </section>
+
+  <!-- Service Header Section -->
+  <section class="service-header">
+    <h1>Our Premium Car Services</h1>
+  </section>
+
+  <!-- Service Section -->
+  <section id="services" class="service-section">
+    <!-- Service Card 1 -->
+    <div class="service-card">
+      <h3>Oil Change & Engine Maintenance</h3>
+      <p>Keep your engine running smoothly with regular oil changes and maintenance.</p>
+      <div class="price">$99</div>
+      <a href="#" class="book-btn">Book Now</a>
+    </div>
+
+    <!-- Service Card 2 -->
+    <div class="service-card">
+      <h3>Tire Replacement & Alignment</h3>
+      <p>Ensure your tires are safe and properly aligned to improve handling and safety. We'll make sure you’re road-ready.</p>
+      <div class="price">$149</div>
+      <a href="#" class="book-btn">Book Now</a>
+    </div>
+
+    <!-- Service Card 3 -->
+    <div class="service-card">
+      <h3>Brake Inspection & Repair</h3>
+      <p>Your safety is our priority. Get a full brake inspection and repair service to ensure you're stopping safely on every drive.</p>
+      <div class="price">$129</div>
+      <a href="#" class="book-btn">Book Now</a>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="contact-section">
+    <h2>Contact Us for Service</h2>
+    <form class="contact-form" action="submit_service_request.php" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Your Phone Number" required>
+      <textarea name="message" placeholder="Describe your service needs..." rows="3" required></textarea>
+      <button type="submit">Send Request</button>
+    </form>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <center><p>&copy; 2025 BMW. All rights reserved.</p></center>
+  </footer>
+
+</body>
+</html>

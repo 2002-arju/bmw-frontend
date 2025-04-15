@@ -1,0 +1,235 @@
+/* General Reset */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  padding-top: 0;
+}
+.logo img {
+  
+  object-fit: cover; 
+    opacity: 0.3; /* Adjust from 0 (invisible) to 1 (fully visible) */
+    
+  }
+      
+
+/* Header Styles */
+.header {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px 0;
+  position: relative;
+  z-index: 1000;
+}
+
+.header .logo img {
+  max-width: 150px;
+  margin-left: 20px;
+  border-radius: 30%;
+}
+
+.navigation ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px 0;
+}
+
+.navigation a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navigation a:hover {
+  color: #ffcc00;
+  transition: all 0.3s ease;
+}
+
+/* Hero Section Styles */
+#bgVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1; /* Sends it behind everything */
+  object-fit: cover;
+}
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 50px;
+  border-radius: 10px;
+  max-width: 80%;
+}
+
+.hero h1 {
+  font-size: 64px;
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.cta-btn {
+  background-color: #ffcc00;
+  color: #000;
+  text-decoration: none;
+  padding: 20px 40px;
+  font-size: 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #e6b800;
+}
+
+/* Models Section - Grid Layout */
+.models-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.model-item {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative; /* To position the button correctly */
+}
+
+.model-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.model-item h3 {
+  font-size: 22px;
+  color: #ffcc00;
+  margin-top: 10px;
+}
+
+.model-item p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.model-item:hover {
+  transform: translateY(-10px);
+}
+
+.cta-btn {
+  background-color: #ffcc00;
+  color: #000;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 15px; /* Ensures there's space between the description and the button */
+}
+
+.cta-btn:hover {
+  background-color: #e6b800;
+}
+
+/* Hero Section Styles with Parallax Effect */
+.hero {
+  height: 100vh;
+  background-image: url('images/1.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background-attachment: fixed;
+  transition: background-position 0.2s ease-in-out;
+}
+
+/* Hero Content Styling */
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 50px;
+  border-radius: 10px;
+  max-width: 80%;
+  transform: translateY(0);
+  transition: transform 0.5s ease-out;
+}
+
+.hero h1 {
+  font-size: 64px;
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.cta-btn {
+  background-color: #ffcc00;
+  color: #000;
+  text-decoration: none;
+  padding: 20px 40px;
+  font-size: 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #e6b800;
+}
+
+.model-item {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure button and content are spaced */
+  position: relative;
+}
+
+.model-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.model-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
